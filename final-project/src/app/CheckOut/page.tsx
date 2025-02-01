@@ -306,4 +306,61 @@ function CheckOut() {
         </div>
       </div>
     </div>
-        
+            {/* Order Summary
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="flex justify-between">
+                <h2 className="text-xl font-semibold mb-6">Product</h2>
+                <h2 className="text-xl font-semibold mb-6">SubTotal</h2>
+              </div>
+              {cartitems.length > 0 ? (
+                cartitems.map((item) => (
+                  <div key={item._id}>
+                    {item.imageurl && (
+                      <Image
+                        src={item.imageurl || "/placeholder.png"}
+                        alt={item.title}
+                        width={100}
+                        height={100}
+                      />
+                    )}
+                    <div>
+                      <h3 className="text-lg font-medium">{item.title}</h3>
+                      <p className="text-gray-600">Quantity: {item.quantity}</p>
+                      <p className="text-gray-600">
+                        Price: ${(item.price * item.quantity).toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>Not Cart Here</p>
+              )}
+              <p>
+                <span className="font-semibold">Subtotal:</span> $
+                {SubTotal.toFixed(2)}
+              </p>
+              <p>
+                <span className="font-semibold">Discount:</span> $
+                {discount.toFixed(2)}
+              </p>
+              <p>
+                <span className="font-semibold">Total:</span> $
+                {(SubTotal - discount).toFixed(2)}
+              </p>
+              {/* Placeholder for Billing Form 
+              <div>
+                {/* Add your billing form here 
+                <p>Billing form placeholder.</p>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </div>
+
+      <Features />
+      <Footer />
+    </>
+  );
+}
+
+export default CheckOut;
