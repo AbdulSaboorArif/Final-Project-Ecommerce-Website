@@ -21,9 +21,9 @@ export default function Footer() {
           <h3 className="text-base font-medium leading-6 text-[#9F9F9F]">Links</h3>
           <nav className="flex flex-col space-y-8">
               <Link href="/" className="text-base hover:text-[#B88E2F] transition-colors">Home</Link>
-              <Link href="/" className="text-base hover:text-[#B88E2F] transition-colors">Shop</Link>
-              <Link href="/" className="text-base hover:text-[#B88E2F] transition-colors">About</Link>
-              <Link href="/" className="text-base hover:text-[#B88E2F] transition-colors">Contact</Link>
+              <Link href="/Shop" className="text-base hover:text-[#B88E2F] transition-colors">Shop</Link>
+              <Link href="/About" className="text-base hover:text-[#B88E2F] transition-colors">About</Link>
+              <Link href="/Contact" className="text-base hover:text-[#B88E2F] transition-colors">Contact</Link>
           </nav>
       </div>
       {/* Help */}
