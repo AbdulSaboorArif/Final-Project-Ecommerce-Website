@@ -22,14 +22,13 @@ const client = createClient({
 });
 
 
-
 interface PageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>; // Ensure params is async
 }
 
 export default async function ProductDetail({ params }: PageProps) {
+  const { id } = await params; // Ensure params is awaited properly
+
   const product = await client.fetch<ProductTypeGloble>(
     `*[_type == "product" && _id == $_id][0]{
       _id,
@@ -40,9 +39,9 @@ export default async function ProductDetail({ params }: PageProps) {
       productImage,
       tags
     }`,
-    { _id: params.id }
+    { _id: id }
   );
-  
+
     if (!product) {
     return (
       <main className="min-h-screen">
