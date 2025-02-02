@@ -23,13 +23,13 @@ const client = createClient({
 
 
 
-interface ProductDetailProps {
+interface PageProps {
   params: {
     id: string;
   };
 }
 
-export default async function ProductDetail({ params }: ProductDetailProps) {
+export default async function ProductDetail({ params }: PageProps) {
   const product = await client.fetch<ProductTypeGloble>(
     `*[_type == "product" && _id == $_id][0]{
       _id,
