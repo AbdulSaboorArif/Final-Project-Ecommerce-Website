@@ -9,11 +9,11 @@ import ProductTypeGloble from "@/app/ProductType/producttypes";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productCount, setProductCount] = useState(0);
-  const [addtocart, setaddToCart] = useState<ProductTypeGloble[]>([]);
+  const [cartItem, setCartItem] = useState<ProductTypeGloble[]>([]);
   const router = useRouter();
 
-  let addtoCart = (product: ProductTypeGloble) => {
-    setaddToCart((prevCart) => [...prevCart, product]);
+  const addtoCart = (product: ProductTypeGloble) => {
+    setCartItem((prevCart) => [...prevCart, product]);
     setProductCount((prevCount) => prevCount + 1);
   };
 
@@ -100,9 +100,9 @@ export default function Header() {
           className="p-1 sm:p-2 hover:bg-gray-100 rounded-full">
             <ShoppingCart
               className="w-5 h-5 sm:w-6 sm:h-6" />
-            {addtocart.length > 0 && (
+            {cartItem.length > 0 && (
               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                {addtocart.length}
+                {cartItem.length}
               </span>
             )}
           </button>

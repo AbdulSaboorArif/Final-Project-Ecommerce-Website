@@ -45,10 +45,12 @@ export default function OurProduct(){
             {/* Product 2 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-4.png"
                   alt="Lolito"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
                 />
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm bg-[#E97171]">
                   -50%
@@ -73,10 +75,12 @@ export default function OurProduct(){
             {/* Product 3 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-5.png"
                   alt="Respira"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
                 />
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm bg-[#2EC1AC]">
                   New
@@ -100,10 +104,13 @@ export default function OurProduct(){
             {/* Product 4 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-6.jpg"
                   alt="Grifo"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
+        
                 />
               </div>
               <div className="flex-1 bg-[#F4F5F7] p-4">
@@ -122,10 +129,12 @@ export default function OurProduct(){
             {/* Product 5 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-7.png"
                   alt="Muggo"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
                 />
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm bg-[#2EC1AC]">
                   New
@@ -147,10 +156,12 @@ export default function OurProduct(){
             {/* Product 6 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-8.png"
                   alt="Pingky"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
                 />
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm bg-[#E97171]">
                   -50%
@@ -175,10 +186,12 @@ export default function OurProduct(){
             {/* Product 7 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-9.jpg"
                   alt="Potty"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
                 />
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm bg-[#2EC1AC]">
                   New
@@ -202,10 +215,12 @@ export default function OurProduct(){
             {/* Product 8 */}
             <div className="flex flex-col group">
               <div className="relative w-full aspect-[285/301] mb-6 overflow-hidden">
-                <img
+                <Image
                   src="/image-10.jpg"
                   alt="Syltherine"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={285}
+                  height={301}
                 />
               </div>
               <div className="flex-1 bg-[#F4F5F7] p-4">
