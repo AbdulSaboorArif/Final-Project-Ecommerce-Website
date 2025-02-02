@@ -6,7 +6,6 @@ import createClient from "@sanity/client";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Swal from "sweetalert2";
-import { addToCart } from "@/app/addtocart/action";
 import Feature from "@/components/Feature";
 import Fotter from "@/components/Fotter"
 
@@ -20,7 +19,7 @@ const sanity = createClient({
 const Shop = () => {
   const [products, setProducts] = useState<ProductTypeGloble[]>([]);
   const [cart, setCart] = useState<ProductTypeGloble[]>([]);
-  const [storeProduct, setstoreProduct] = useState()
+  // const [storeProduct, setstoreProduct] = useState()
   const fetchProducts = async () => {
     try {
       const quary = `*[_type == "product"]{
@@ -43,6 +42,7 @@ const Shop = () => {
 
     // alert(`${product.title} added to your cart`);
   };
+  console.log(cart)
   useEffect(() => {
     fetchProducts();
   }, []);

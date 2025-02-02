@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Star } from 'lucide-react'
 import { addToCart } from "@/app/addtocart/action"
 import Swal from "sweetalert2"
-import { dataset } from "@/sanity/env"
+
 
 
 

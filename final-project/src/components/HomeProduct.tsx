@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import createClient from "@sanity/client";
 import Link from "next/link";
-import Header from "@/components/Header";
-import { product } from "@/sanity/schemaTypes/product";
+
 
 const sanity = createClient({
   projectId: "5qp3kdvb",
@@ -53,6 +52,7 @@ const HomeProduct =  () => {
   useEffect(() => {
     fetchProducts();
   }, []);
+  console.log(cart)
   return (
     <>
       <div>

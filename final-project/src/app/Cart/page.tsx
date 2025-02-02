@@ -1,10 +1,8 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Trash2, Plus, Minus } from "lucide-react";
 import Swal from "sweetalert2";
-
 import {
   getCartItems,
   removeFromCart,

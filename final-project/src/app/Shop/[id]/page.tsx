@@ -2,9 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
-import CartSection from "@/components/ProductInfo";
-import { Trophy, Shield, Truck, HeadphonesIcon } from "lucide-react";
-import ComponetWork from "@/components/HomeProduct";
 import createClient from "@sanity/client"; // Import the sanity client
 import ProductInfo from "@/components/ProductInfo";
 import MidHeader from "@/components/midHeader";

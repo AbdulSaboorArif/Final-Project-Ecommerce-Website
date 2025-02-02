@@ -1,8 +1,8 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Heart, ShoppingCart, User, Menu, X, Router } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Header() {
@@ -16,7 +16,8 @@ export default function Header() {
     setProductCount((prevCount) => prevCount + 1);
   };
 
-
+  console.log(addtoCart)
+  console.log(productCount)
   return (
     
     <header className="w-full max-w-[1440px] h-auto sm:h-[100px] mx-auto borde-2 border-red-700">

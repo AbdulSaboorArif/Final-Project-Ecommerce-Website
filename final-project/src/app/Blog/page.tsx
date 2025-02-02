@@ -2,10 +2,6 @@ import Features from "@/components/Feature";
 import Footer from "@/components/Fotter";
 import Header from "@/components/Header";
 import {
-  Trophy,
-  Shield,
-  Truck,
-  HeadphonesIcon,
   User,
   Calendar,
   Tag,
