@@ -25,7 +25,7 @@ const client = createClient({
 
 interface ProductDetailProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
