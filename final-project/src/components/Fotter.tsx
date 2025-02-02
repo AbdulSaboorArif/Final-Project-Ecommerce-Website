@@ -22,7 +22,7 @@ export default function Footer() {
           <nav className="flex flex-col space-y-8">
               <Link href="/" className="text-base hover:text-[#B88E2F] transition-colors">Home</Link>
               <Link href="/Shop" className="text-base hover:text-[#B88E2F] transition-colors">Shop</Link>
-              <Link href="/About" className="text-base hover:text-[#B88E2F] transition-colors">About</Link>
+              <Link href="/Blog" className="text-base hover:text-[#B88E2F] transition-colors">Blog</Link>
               <Link href="/Contact" className="text-base hover:text-[#B88E2F] transition-colors">Contact</Link>
           </nav>
       </div>
