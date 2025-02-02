@@ -43,10 +43,6 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
     { _id: params.id }
   );
   
-
-
-
-  
     if (!product) {
     return (
       <main className="min-h-screen">
