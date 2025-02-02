@@ -16,7 +16,7 @@ import Header from "@/components/Header";
 import ProductTypeGloble from "../ProductType/producttypes";
 
 
-export const Cart:React.FC = () => {
+ const Cart:React.FC = () => {
   const [cartItems, setCartItems] = useState<ProductTypeGloble[]>([]);
   const [isloading, setIsloading] = useState(true);
   const router = useRouter();
