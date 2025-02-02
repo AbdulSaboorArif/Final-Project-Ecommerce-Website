@@ -1,3 +1,4 @@
+import ProductTypeGloble from "../ProductType/producttypes"
 
 export const addToCart = (product: ProductTypeGloble) => {
   const cart: ProductTypeGloble[] = JSON.parse(localStorage.getItem("cart") || "[]")

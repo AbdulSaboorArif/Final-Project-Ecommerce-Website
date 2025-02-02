@@ -4,11 +4,12 @@ import Image from "next/image";
 import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ProductTypeGloble from "@/app/ProductType/producttypes";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productCount, setProductCount] = useState(0);
-  const [addtocart, setaddToCart] = useState<any[]>([]);
+  const [addtocart, setaddToCart] = useState<ProductTypeGloble[]>([]);
   const router = useRouter();
 
   let addtoCart = (product: ProductTypeGloble) => {

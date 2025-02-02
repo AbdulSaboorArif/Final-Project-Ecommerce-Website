@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Swal from "sweetalert2";
 import Feature from "@/components/Feature";
 import Fotter from "@/components/Fotter"
+import ProductTypeGloble from "../ProductType/producttypes";
 
 const sanity = createClient({
   projectId: "g66g9rag",

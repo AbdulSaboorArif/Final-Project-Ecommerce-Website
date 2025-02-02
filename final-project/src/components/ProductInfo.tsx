@@ -6,8 +6,7 @@ import { Star } from 'lucide-react'
 import { addToCart } from "@/app/addtocart/action"
 import Swal from "sweetalert2"
 
-
-
+import ProductTypeGloble from  "@/app/ProductType/producttypes"
 
 
 export default function ProductInfo({ data }: { data: ProductTypeGloble}) {
@@ -16,6 +15,22 @@ export default function ProductInfo({ data }: { data: ProductTypeGloble}) {
   const [selectedColor, setSelectedColor] = useState("Purple")
   const [selectedSize, setSelectedSize] = useState("L")
 
+  interface ProductTypeGloble{
+    _id: string;
+    title: string;
+    price: number;
+    description: string;
+    imageurl: string;
+    productImage: {
+      asset: {
+        _ref: string;
+      };
+    };
+    tags: string[];
+    quantity: number;
+      
+  }
+  
   const handleIncrement = () => {
     setQuantity(prev => prev + 1)
   }

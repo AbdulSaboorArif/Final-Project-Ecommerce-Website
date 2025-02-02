@@ -7,6 +7,7 @@ import ProductInfo from "@/components/ProductInfo";
 import MidHeader from "@/components/midHeader";
 import Fotter from "@/components/Fotter";
 import Feature from "@/components/Feature";
+import ProductTypeGloble from "@/app/ProductType/producttypes";
 
 
 

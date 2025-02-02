@@ -14,3 +14,4 @@ interface ProductTypeGloble{
   quantity: number;
     
 }
+export default ProductTypeGloble;

@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import Features from "@/components/Feature";
 import Footer from "@/components/Fotter";
 import Header from "@/components/Header";
+import ProductTypeGloble from "../ProductType/producttypes";
 
 
 export const Cart = () => {

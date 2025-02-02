@@ -7,6 +7,7 @@ import Footer from "@/components/Fotter";
 import Features from "@/components/Feature";
 import Image from "next/image";
 import Link from "next/link";
+import ProductTypeGloble from "../ProductType/producttypes";
 function CheckOut() {
   const [cartitems, setCartitems] = useState<ProductTypeGloble[]>([]);
   const [discount, setDiscount] = useState<number>(0);
