@@ -96,7 +96,7 @@ export default function Header() {
           </button>
        
           <button 
-           onClick={(addtocart) => router.push("/Cart")}
+           onClick={() => router.push("/Cart")}
           className="p-1 sm:p-2 hover:bg-gray-100 rounded-full">
             <ShoppingCart
               className="w-5 h-5 sm:w-6 sm:h-6" />
