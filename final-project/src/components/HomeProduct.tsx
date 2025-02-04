@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import createClient from "@sanity/client";
 import Link from "next/link";
+import ProductTypeGloble from "@/app/ProductType/producttypes";
 
 
 const sanity = createClient({
@@ -12,22 +13,22 @@ const sanity = createClient({
   apiVersion: "2021-03-25",
 });
 
-interface ProductDataType {
-  _id: number;
-  title: string;
-  price: number;
-  description: string;
-  imageurl: string;
-  productImage: {
-    asset: {
-      _ref: string;
-    };
-  };
-  tags: string[];
-}
+// interface ProductDataType {
+//   _id: number;
+//   title: string;
+//   price: number;
+//   description: string;
+//   imageurl: string;
+//   productImage: {
+//     asset: {
+//       _ref: string;
+//     };
+//   };
+//   tags: string[];
+// }
 const HomeProduct =  () => {
-  const [products, setProducts] = useState<ProductDataType[]>([]);
-  const [cart, setCart] = useState<ProductDataType[]>([]);
+  const [products, setProducts] = useState<ProductTypeGloble[]>([]);
+  const [cart, setCart] = useState<ProductTypeGloble[]>([]);
   const fetchProducts = async () => {
     try {
       const quary = `*[_type == "product"]{
@@ -39,13 +40,13 @@ const HomeProduct =  () => {
           productImage,
           tags
             }`;
-      const data = await sanity.fetch<ProductDataType[]>(quary);
+      const data = await sanity.fetch<ProductTypeGloble[]>(quary);
       setProducts(data);
     } catch (error) {
       console.log(error);
     }
   };
-  const addToCart = (product: ProductDataType) => {
+  const addToCart = (product: ProductTypeGloble) => {
     setCart((prevCart) => [...prevCart, product]);
     alert(`${product.title} added to your cart`);
   };
