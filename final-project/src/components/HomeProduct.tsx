@@ -13,19 +13,6 @@ const sanity = createClient({
   apiVersion: "2021-03-25",
 });
 
-// interface ProductDataType {
-//   _id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   imageurl: string;
-//   productImage: {
-//     asset: {
-//       _ref: string;
-//     };
-//   };
-//   tags: string[];
-// }
 const HomeProduct =  () => {
   const [products, setProducts] = useState<ProductTypeGloble[]>([]);
   const [cart, setCart] = useState<ProductTypeGloble[]>([]);

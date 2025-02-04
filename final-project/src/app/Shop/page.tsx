@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -7,7 +8,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Swal from "sweetalert2";
 import Feature from "@/components/Feature";
-import Fotter from "@/components/Fotter";
+import Fotter from "@/components/Fotter"
 import ProductTypeGloble from "../ProductType/producttypes";
 
 const sanity = createClient({
@@ -19,6 +20,7 @@ const sanity = createClient({
 
 const Shop = () => {
   const [products, setProducts] = useState<ProductTypeGloble[]>([]);
+  const [cart, setCart] = useState<ProductTypeGloble[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<ProductTypeGloble[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -49,6 +51,11 @@ const Shop = () => {
     );
     setFilteredProducts(filtered);
   };
+  const addToCart = (product: ProductTypeGloble) => {
+    setCart((prevCart) => [...prevCart, product]);
+
+  };
+  
 
   const handleAddToCart = (e: React.MouseEvent, product: ProductTypeGloble) => {
     e.preventDefault();
@@ -60,8 +67,10 @@ const Shop = () => {
       showConfirmButton: false,
     });
     setCart((prevCart) => [...prevCart, product]);
+    addToCart(product)
   };
 
+  console.log(cart)
   useEffect(() => {
     fetchProducts();
   }, []);
