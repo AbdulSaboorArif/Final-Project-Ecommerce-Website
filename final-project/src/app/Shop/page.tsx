@@ -62,7 +62,7 @@ const Shop = () => {
   
   return (
     <>
-      <Header />
+      <Header/>
       {/* Hero Section with background image */}
       <div className="w-full max-w-[1440px] mx-auto bg-[url('/BackgroundImage.jpg')] py-12 md:py-16 bg-cover bg-center bg-no-repeat opacity-90">
         <div className="text-center space-y-5">

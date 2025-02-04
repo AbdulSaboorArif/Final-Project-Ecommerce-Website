@@ -4,13 +4,17 @@ import Image from "next/image";
 import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 import ProductTypeGloble from "@/app/ProductType/producttypes";
 
+
 export default function Header() {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productCount, setProductCount] = useState(0);
   const [cartItem, setCartItem] = useState<ProductTypeGloble[]>([]);
   const router = useRouter();
+ 
 
   const addtoCart = (product: ProductTypeGloble) => {
     setCartItem((prevCart) => [...prevCart, product]);
@@ -20,7 +24,8 @@ export default function Header() {
   console.log(addtoCart)
   console.log(productCount)
   return (
-    
+
+   
     <header className="w-full max-w-[1440px] h-auto sm:h-[100px] mx-auto borde-2 border-red-700">
       <div className="w-full max-w-[1286px] min-h-[41px] mx-auto my-4 md:my-[25px] flex flex-wrap justify-between items-center px-2 lg:px-[20px]">
         {/* Logo */}
@@ -88,6 +93,7 @@ export default function Header() {
           <button className="p-1 sm:p-2 hover:bg-gray-100 rounded-full">
             <User className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
+         
           <button className="p-1 sm:p-2 hover:bg-gray-100 rounded-full">
             <Search className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
