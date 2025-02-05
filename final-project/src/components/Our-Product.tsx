@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 export default function OurProduct(){
     return(
 
@@ -10,7 +11,7 @@ export default function OurProduct(){
               Our Products
             </h2>
           </div>
-    
+    <Link href={"/Shop"}>
           <div className="grid grid-cls-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
             {/* Product 1 */}
           
@@ -244,6 +245,7 @@ export default function OurProduct(){
           <div className="w-full max-w-[245px] h-[48px] flex justify-center mx-auto my-9 border-2 border-[#B88E2F]">
             <button className="text-base font-semibold leading-6 text-[#B88E2F]">Show More</button>
           </div>
+              </Link>
         </section>
               
   
