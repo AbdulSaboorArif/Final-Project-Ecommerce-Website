@@ -48,7 +48,7 @@ export default function Blog() {
           <div className="space-y-4">
             <div className="relative w-full h-[500px] sm:h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/Blog.image.jpg"
+                src="/Blog.Image.jpg"
                 alt="Blog post image"
                 fill
                 className="object-cover"
