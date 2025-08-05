@@ -78,6 +78,7 @@ const Shop = () => {
   return (
     <>
       <Header />
+      <>
       <div className="w-full max-w-[1440px] mx-auto bg-[url('/BackgroundImage.jpg')] py-12 md:py-16 bg-cover bg-center bg-no-repeat opacity-90">
         <div className="text-center space-y-5">
           <h1 className="text-5xl font-bold leading-8 text-black">Shop</h1>
@@ -109,7 +110,7 @@ const Shop = () => {
 
       <div>
         <h1 className="text-4xl font-bold mx-auto py-8 text-center pb-4">
-          Product List
+          Product List  
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {filteredProducts.map((product) => (
@@ -153,7 +154,7 @@ const Shop = () => {
                 {/* Add To Cart */}
                 <div>
                   <button
-                    onClick={(e) => handleAddToCart(e, product)}
+                    onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleAddToCart(e, product)}
                     className="bg-[#B88E2F] text-white px-4 py-2 rounded mt-4"
                   >
                     Add To Cart
@@ -164,6 +165,7 @@ const Shop = () => {
           ))}
         </div>
       </div>
+      </>
 
       <Feature />
       <Fotter />

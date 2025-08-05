@@ -4,6 +4,7 @@ import Hero from '@/components/Hero'
 import OurProduct from "@/components/Our-Product"
 import BeautifullRoom from '@/components/Beautifullroom'
 import Footer from '@/components/Fotter'
+import { AI_ChatbotAgent } from '@/components/ChatbotAgent'
 // import HomeProduct from '@/components/HomeProduct'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="min-h-screen">
           
       <Header />
+  
       <Hero />
       <OurProduct/>
       <BeautifullRoom/>
