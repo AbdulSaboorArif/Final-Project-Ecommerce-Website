@@ -38,6 +38,7 @@ const Chatbot = () => {
         sender: "bot",
         text: "Sorry, there was a technical issue. Please try again later.",
       };
+    console.log(err)
       setStoreMessage((prev) => [...prev, errorResponse]);
     }
   };
