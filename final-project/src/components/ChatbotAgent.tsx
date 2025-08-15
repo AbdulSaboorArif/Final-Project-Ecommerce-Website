@@ -33,12 +33,11 @@ const Chatbot = () => {
 
       const botResponse = { sender: "bot", text: data.response };
       setStoreMessage((prev) => [...prev, botResponse]);
-    } catch (err) {
+    } catch {
       const errorResponse = {
         sender: "bot",
         text: "Sorry, there was a technical issue. Please try again later.",
       };
-    console.log(err)
       setStoreMessage((prev) => [...prev, errorResponse]);
     }
   };
