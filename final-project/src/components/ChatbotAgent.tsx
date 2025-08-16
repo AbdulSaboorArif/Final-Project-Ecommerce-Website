@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { LuMessageCircleCode } from "react-icons/lu";
 
 import { FiMinimize, FiX } from "react-icons/fi"; // Added new icons
-import { Send } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +15,15 @@ const Chatbot = () => {
     },
   ]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
+
+  const scrollToButtom = () => {
+    chatWindowRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(() => {
+    scrollToButtom();
+  }, [storeMessage]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -23,6 +32,7 @@ const Chatbot = () => {
     setStoreMessage((prev) => [...prev, newUserMessage]);
     setInput("");
 
+    setLoading(true);
     try {
       const request = await fetch("https://tester-chatbot.onrender.com/chat", {
         method: "POST",
@@ -39,6 +49,8 @@ const Chatbot = () => {
         text: "Sorry, there was a technical issue. Please try again later.",
       };
       setStoreMessage((prev) => [...prev, errorResponse]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,25 +66,31 @@ const Chatbot = () => {
 
       {/* Chat window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-[450px] bg-white border border-gray-800 rounded-xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-in-out">
+        <div className="fixed bottom-24 right-6 w-80 md:w-96 h-[500px] bg-white border border-gray-800 rounded-xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-in-out">
           {/* Chat header */}
-          <div className="bg-gradient-to-r from-sky-600 to-pink-600 p-4 border-b border-gray-200 flex items-center justify-between">
-            <div className="flex items-center">
-              <span className="relative flex h-2 w-2 mr-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <h2 className="text-md font-semibold text-black">Furniture Assistant</h2>
+          <div className="bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 p-6 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <MessageCircle className="h-5 w-5" />
+              </div>
+
+              <h2 className="text-base font-semibold text-white">
+                Furniture Assistant
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <p className="text-xs text-purple-100">Online now</p>
+                </div>
+              </h2>
             </div>
             <div className="flex items-center space-x-2">
               <FiMinimize
                 size={18}
-                className="text-black cursor-pointer hover:text-gray-600"
+                className="text-white cursor-pointer hover:text-black"
                 onClick={() => setIsOpen(false)}
               />
               <FiX
                 size={18}
-                className="text-black cursor-pointer hover:text-gray-600"
+                className="text-white cursor-pointer hover:text-black"
                 onClick={() => setIsOpen(false)}
               />
             </div>
@@ -90,14 +108,26 @@ const Chatbot = () => {
                 <div
                   className={`max-w-[80%] rounded-lg p-3 shadow-sm ${
                     msg.sender === "user"
-                      ? "bg-indigo-600 text-white rounded-br-none"
-                      : "bg-gray-100 text-gray-800 rounded-bl-none"
+                      ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-md shadow-lg"
+                      : "bg-white text-gray-800 shadow-slate-800 border border-gray-100  rounded-bl-none"
                   }`}
                 >
                   {msg.text}
                 </div>
               </div>
             ))}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="max-w-[80%] rounded-lg p-3 shadow-sm bg-gray-100 text-gray-800">
+                  <div className="flex space-x-2">
+                    <div className="w-2 h-2 bg-red-600 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-pink-400 rounded-full animate-bounce100"></div>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce300"></div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div ref={chatWindowRef} />
           </div>
 
           {/* Input field */}
